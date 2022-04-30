@@ -1,9 +1,9 @@
 local LocalPlayer = game:GetService('Players').LocalPlayer
 
 local player = {
-	1646658373,
-	2485426684,
-	246903075,
+  1646658373,
+  2485426684,
+  246903075,
   3425675355
 }
 
