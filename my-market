@@ -1,10 +1,10 @@
 local LocalPlayer = game:GetService('Players').LocalPlayer
 
 local player = {
-  1646658373,
-  2485426684,
-  246903075,
-  3425675355
+	1646658373,
+	2485426684,
+	246903075,
+    3425675355
 }
 
 if table.find(player, LocalPlayer.UserId) then
@@ -20,6 +20,27 @@ local Category = MainWindow.Category('Categorias')
 local Folder_1 = Category.Folder('Server Script')
 
 Folder_1.Label('Scripts')
+
+Folder_1.Toggle('AutoFarm Mercado', function(Bool)-- Se tiver "false" ele vai parar
+
+if Bool == true then
+_G.Pegando = true
+end
+
+if Bool == false then
+_G.Pegando = false
+end
+
+while _G.Pegando == true do
+wait()
+for i,v in pairs(game:GetService("Workspace")["Mercado_Caixas"]:GetDescendants()) do
+   if v:IsA('ClickDetector') and v.Name == 'ClickDetector' then
+   fireclickdetector(v, math.huge)
+end
+end
+end
+
+end, false)
 
 Folder_1.Button('Kill All', function()
 for i,v in pairs(game:GetService('Players'):GetPlayers()) do
