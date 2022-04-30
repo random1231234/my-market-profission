@@ -1,0 +1,87 @@
+local LocalPlayer = game:GetService('Players').LocalPlayer
+
+local player = {
+	1646658373,
+	2485426684,
+	246903075,
+  3425675355
+}
+
+if table.find(player, LocalPlayer.UserId) then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/yShadow12/yShadow-Gui/main/Tem%20Acesso"))()
+
+task.wait(5)
+
+if game.PlaceId == 5373778395 then
+local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/Zv-yz/RBXScripts/master/UILib/OceriumEdited.lua'))()
+local MainWindow = Library.Main('Ocerium Example', game.CoreGui, 'LeftAlt')
+local Category = MainWindow.Category('Categorias')
+
+local Folder_1 = Category.Folder('Server Script')
+
+Folder_1.Label('Scripts')
+
+Folder_1.Button('Kill All', function()
+for i,v in pairs(game:GetService('Players'):GetPlayers()) do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+local A_1 = "hit"
+local A_2 = "}, {  "
+local A_3 = math.huge
+local A_4 = v.Character.Humanoid
+local A_5 = v.Character.Head
+local A_6 = 2
+local A_7 = Vector3.new(v.Character.Head.Position.X, v.Character.Head.Position.Y, v.Character.Head.Position.Z)
+local A_8 = math.huge
+local Event = game:GetService("ReplicatedStorage").ChatSystemGetMessage
+Event:InvokeServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7, A_8)
+end
+end
+end)
+end
+
+if game.PlaceId == 8480128421 then
+local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/Zv-yz/RBXScripts/master/UILib/OceriumEdited.lua'))()
+local MainWindow = Library.Main('Ocerium Example', game.CoreGui, 'LeftAlt')
+local Category = MainWindow.Category('Categorias')
+
+local Folder_1 = Category.Folder('Server Script')
+
+Folder_1.Label('Scripts')
+
+Folder_1.Button('Kill All', function()
+for i,v in pairs(game:GetService('Players'):GetPlayers()) do
+local A_2 = math.huge
+local A_3 = 0
+local A_4 = 0
+local Event = game:GetService("ReplicatedStorage")["ACS_Engine"].Eventos.Damage
+Event:FireServer(v.Character.Humanoid, A_2, A_3, A_4)
+end
+end)
+
+Folder_1.Button('Explode All', function()
+local plr = game.Players.LocalPlayer
+local Evt = game.ReplicatedStorage.ACS_Engine.Eventos
+
+local Settings = {
+    ["ExplosiveHit"] = true,
+    ["ExPressure"] = math.huge,
+    ["ExpRadius"] = math.huge,
+    ["DestroyJointRadiusPercent"] = math.huge,
+    ["ExplosionDamage"] = math.huge,
+}
+
+ 
+while wait() do 
+    pcall(function()
+       for i,v in pairs(game.Players:GetChildren()) do
+            game.ReplicatedStorage.ACS_Engine.Eventos.Hit:FireServer(v.Character.Head.Position, v.Character.Head, v.Character.Head.Position, Enum.Material.Plastic, Settings)
+        end 
+    end)
+end
+end)
+end
+end
+
+if not table.find(player, LocalPlayer.UserId) then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/yShadow12/yShadow-Gui/main/Sem%20Acesso"))()
+end
